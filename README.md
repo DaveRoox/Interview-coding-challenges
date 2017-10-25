@@ -61,16 +61,18 @@ Infact, we can spot two cases:
     </li>
   <li><b>high > low</b>: in this case the main idea is to "transform" this case into the previous one. This can be done adding the length of the array, <i>n</i>, to <i>high</i> and getting the result modulo <i>n</i><br><br>
     Let's suppose to have the following array:<br><br>
-    <center><img align='middle' src='https://user-images.githubusercontent.com/23279650/32007673-788856ce-b9aa-11e7-9614-916dc30875a4.png'/></center><br><br>
+    <img align='middle' src='https://user-images.githubusercontent.com/23279650/32007673-788856ce-b9aa-11e7-9614-916dc30875a4.png'/><br><br>
     Adding <i>n</i> to <i>high</i> would mean thinking about the array as it has an "extension" and evaluating the middle index would pick the element as shown:<br><br>
-    <center><img align='middle' src='https://user-images.githubusercontent.com/23279650/32007674-78a77b76-b9aa-11e7-8dcb-e242ebd002db.png'/></center><br><br>
+    <img align='middle' src='https://user-images.githubusercontent.com/23279650/32007674-78a77b76-b9aa-11e7-8dcb-e242ebd002db.png'/><br><br>
     At this point what has left to do is to get the index of the middle back to the original interval [0, n-1]. This is easily done by applying the modulo operator:<br><br>
-    <center><img src='https://user-images.githubusercontent.com/23279650/32007675-78c5a420-b9aa-11e7-871e-8790a1e9d442.png'/></center><br><br>
+    <img src='https://user-images.githubusercontent.com/23279650/32007675-78c5a420-b9aa-11e7-871e-8790a1e9d442.png'/><br><br>
     So:<br>
     <b>middle = floor((low + high + n) / 2) % n</b>
   </li>
 </ul>
-
+If the target is present into the array, iterating the evaluation of the current middle point as shown, and checking for its element until the target has not been found and updating <i>low</i> and <i>high</i> according to the original algorithm, will get the index of the target.<br>
+Otherwise we will know that the target is not present into the array if <i>low = high AND array[middle] = array[low] = array[high] != target</i>.<br>
+Hence, the condition to verify to keep iterating is that <i>array[middle] != target AND low != high</i>.<br><br>
 The code is:<br>
 ```python
 def logarithmic_search(array, low, high, target):
