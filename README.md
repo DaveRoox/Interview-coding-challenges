@@ -13,7 +13,7 @@ Also, this is a good opportunity for me too to keep training, so not why, but <b
 
 # Challenges
 <ul>
-  <a href="https://github.com/DaveRoox/Interview-coding-challenges/blob/master/README.md#search-in-sorted-rotated-array">Search in sorted rotated array</a>
+  <li><a href="https://github.com/DaveRoox/Interview-coding-challenges/blob/master/README.md#search-in-sorted-rotated-array">Search in sorted rotated array</a></li>
 </ul>
 
 <b>---------------------------------------------------------------------------</b>
@@ -27,7 +27,7 @@ Find the index of the number 7, the output is 1.<br>
 A brute force solution consists in a linear search over the array.<br>
 If the element is matched, the function returns the current index.
 
-```python3
+```python
 def linear_search(array, low, high, target):
 
     n = len(array)
@@ -43,7 +43,7 @@ def linear_search(array, low, high, target):
 In this case we do not even need to know the index of the minimum, <i>low</i>, and the index of the maximum element, <i>high</i>.<br>
 The solution looks simple and clear but, unfortunately, when it comes to the performance it does not result in the best approach possible.<br>
 Infact, due to we iterate over the whole array, in the worst case (the target number is not present) the algorithm performs <b>n</b> iterations. The average case, however, is not different from the worst case, because, supposing that we define the "average case" when the target number is in the middle of the array, it turns out to performs an average number of iterations that is <b>n/2</b>.<br>
-So we have:
+So:
 <ul>
   <li>The time complexity is O(n), where n is the size of the array</li>
   <li>The space complexity is O(1), because we don't need to allocate extra space depending on the size of the array</li>
