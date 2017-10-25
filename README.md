@@ -22,3 +22,23 @@ Also, this is a good opportunity for me too to keep training, so not why, but <b
 Find a target number in sorted array with rotation.<br>
 Example: the array is [5, 7, 8, 1, 3]<br>
 Find the index of the number 7, the output is 1.<br>
+
+<b><h4>Brute force approach</h4></b>
+A brute force solution consists in a linear search over the array.<br>
+If the element is matched, the function returns the current index
+
+```python
+def linear_search(array, a, b, target):
+    if target < array[a] or target > array[b]:
+        return False, None, 1
+
+    n = len(array)
+    iterations = 1
+
+    for i in range(n):
+        if array[i] == target:
+            return True, i, iterations
+        iterations += 1
+
+    return False, None, iterations
+```
