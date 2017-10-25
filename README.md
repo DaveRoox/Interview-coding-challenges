@@ -74,6 +74,7 @@ If the target is present into the array, iterating the evaluation of the current
 Otherwise we will know that the target is not present into the array if <i>low = high AND array[middle] = array[low] = array[high] != target</i>.<br>
 Hence, the condition to verify to keep iterating is that <i>array[middle] != target AND low != high</i>.<br><br>
 The code is:<br>
+
 ```python
 def logarithmic_search(array, low, high, target):
 
@@ -94,6 +95,7 @@ def logarithmic_search(array, low, high, target):
 
     return array[mid] == target, mid if array[mid] == target else None, iterations
 ```
+
 For this algorithm:
 <ul>
   <li>The time complexity is O(log(n)), where n is the size of the array</li>
