@@ -70,7 +70,7 @@ Infact, we can spot two cases:
     <b>middle = floor((low + high + n) / 2) % n</b>
   </li>
 </ul>
-If the target is present into the array, iterating the evaluation of the current middle point as shown, checking for its element until the target has not been found and updating <i>low</i> and <i>high</i> according to the original algorithm, will get the index of the target.<br>
+If the target is present into the array, iterating the evaluation of the current middle point as shown, checking if its element matches the target and updating <i>low</i> and <i>high</i> according to the original algorithm, will get the index of the target.<br>
 Otherwise we will know that the target is not present into the array if <i>low == high (= middle) AND array[middle] != target</i>.<br>
 Hence, the condition to satisfy in order to keep iterating is: <i>array[middle] != target AND low != high</i>.<br><br>
 
