@@ -13,6 +13,8 @@ def linear_search(array, low, high, target):
 
     return False, None, iterations
 
+# ------------------------------------------------------------------------------------
+
 # Binary search based approach:
 # Time complexity: O(lgn)
 # Space complexity: O(1)
@@ -35,6 +37,7 @@ def logarithmic_search(array, low, high, target):
 
     return array[mid] == target, mid if array[mid] == target else None, iterations
 
+# ------------------------------------------------------------------------------------
 
 # Main program to test the functions.
 # Creating the array and filling in positions shifted by an offset
