@@ -41,7 +41,7 @@ def linear_search(array, low, high, target):
     return False, None, iterations
 ```
 In this case we do not even need to know the index of the minimum, <i>low</i>, and the index of the maximum element, <i>high</i>.<br>
-The solution looks simple and clear but, unfortunately, when it comes to the performance it does not result in the best approach.<br>
+The solution looks simple and clear but, unfortunately, when it comes to the performance it does not result the best approach.<br>
 In fact, since we iterate over the whole array, in the worst case (that is when the target number is not present) the algorithm performs <b>n</b> iterations. The average case, however, is not different from the worst case, because, supposing that we define the "average case" when the target number is in the middle of the array, it turns out to performs an average number of iterations that is <b>n/2</b>.<br>
 So:
 <ul>
