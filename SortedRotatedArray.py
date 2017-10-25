@@ -1,10 +1,7 @@
 # Brute-force approach:
 # Time complexity: O(n)
 # Space complexity: O(1)
-def linear_search(array, a, b, target):
-
-    if target < array[a] or target > array[b]:
-        return False, None, 1
+def linear_search(array, low, high, target):
 
     n = len(array)
     iterations = 1
@@ -19,24 +16,24 @@ def linear_search(array, a, b, target):
 # Binary search based approach:
 # Time complexity: O(lgn)
 # Space complexity: O(1)
-def logarithmic_search(array, a, b, target):
+def logarithmic_search(array, low, high, target):
 
-    if target < array[a] or target > array[b]:
+    if target < array[low] or target > array[high]:
         return False, None, 1
 
     n = len(array)
-    c = ((a + b + n) // 2) % n if b < a else (a + b) // 2
+    mid = ((low + high + n) // 2) % n if high < low else (low + high) // 2
     iterations = 1
 
-    while array[c] != target and a != b:
-        if array[c] < target:
-            a = (c + 1) % n
+    while array[mid] != target and low != high:
+        if array[mid] < target:
+            low = (mid + 1) % n
         else:
-            b = (c - 1 + n) % n
-        c = ((a + b + n) // 2) % n if b < a else (a + b) // 2
+            high = (mid - 1 + n) % n
+        mid = ((low + high + n) // 2) % n if high < low else (low + high) // 2
         iterations += 1
 
-    return array[c] == target, c if array[c] == target else None, iterations
+    return array[mid] == target, mid if array[mid] == target else None, iterations
 
 
 # Main program to test the functions.
@@ -56,14 +53,14 @@ print()
 
 # Searching for a target number
 target = 20 # present
-found, index, iterations = logarithmic_search(array, a=offset, b=offset - 1, target=target)
+found, index, iterations = logarithmic_search(array, low=offset, high=offset - 1, target=target)
 if found:
     print('%d found at index %d [%d iterations]' % (target, index, iterations))
 else:
     print('%d not found [%d iterations]' % (target, iterations))
 	
 target = 19 # not present
-found, index, iterations = logarithmic_search(array, a=offset, b=offset - 1, target=target)
+found, index, iterations = logarithmic_search(array, low=offset, high=offset - 1, target=target)
 if found:
     print('%d found at index %d [%d iterations]' % (target, index, iterations))
 else:
