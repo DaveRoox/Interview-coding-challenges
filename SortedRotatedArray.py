@@ -7,7 +7,7 @@ def linear_search(array, a, b, target):
         return False, None, 1
 
     n = len(array)
-	iterations = 1
+    iterations = 1
 	
     for i in range(n):
 		if array[i] == target:
@@ -21,7 +21,7 @@ def linear_search(array, a, b, target):
 # Space complexity: O(1)
 def logarithmic_search(array, a, b, target):
 
-	if target < array[a] or target > array[b]:
+    if target < array[a] or target > array[b]:
         return False, None, 1
 
     n = len(array)
