@@ -18,7 +18,7 @@ Also, this is a good opportunity for me too to keep training, so not why, but <b
 
 <b>---------------------------------------------------------------------------</b>
 
-# Search in sorted rotated array
+<b><h2>Search in sorted rotated array</h2></b>
 Find a target number in sorted array with rotation.
 Example: the array is [5, 7, 8, 1, 3]
 Find the index of the number 7, the output is 1.
