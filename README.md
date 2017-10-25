@@ -64,7 +64,7 @@ Infact, we can spot two cases:
     <img align='middle' src='https://user-images.githubusercontent.com/23279650/32007673-788856ce-b9aa-11e7-9614-916dc30875a4.png'/><br><br>
     Adding <i>n</i> to <i>high</i> would mean thinking about the array as it has an "extension" and evaluating the middle index would pick the element as shown:<br><br>
     <img align='middle' src='https://user-images.githubusercontent.com/23279650/32007674-78a77b76-b9aa-11e7-8dcb-e242ebd002db.png'/><br><br>
-    At this point what has left to do is to get the index of the middle back to the original interval [0, n-1]. This is easily done by applying the modulo operator:<br><br>
+    At this point all that's left to do is to get the index of the middle back to the original interval [0, n-1]. This is easily done by applying the modulo operator:<br><br>
     <img src='https://user-images.githubusercontent.com/23279650/32007675-78c5a420-b9aa-11e7-871e-8790a1e9d442.png'/><br><br>
     So:<br>
     <b>middle = floor((low + high + n) / 2) % n</b>
