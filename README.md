@@ -42,16 +42,16 @@ def linear_search(array, low, high, target):
 ```
 In this case we do not even need to know the index of the minimum, <i>low</i>, and the index of the maximum element, <i>high</i>.<br>
 The solution looks simple and clear but, unfortunately, when it comes to the performance it does not result the best approach.<br>
-In fact, since we iterate over the whole array, in the worst case (that is when the target number is not present) the algorithm performs <b>n</b> iterations. The average case, however, is not different from the worst case, because, supposing that we define the "average case" when the target number is in the middle of the array, it turns out to performs an average number of iterations that is <b>n/2</b>.<br>
+In fact, since we iterate over the whole array, in the worst case (that is when the target number is not present) the algorithm performs <b>n</b> iterations. The average case, however, is not different from the worst case, because, supposing that we define the "average case" when the target number is in the middle of the array, it turns out to perform an average number of iterations that is <b>n/2</b>.<br>
 So:
 <ul>
   <li>The time complexity is O(n), where n is the size of the array</li>
-  <li>The space complexity is O(1), because we don't need to allocate extra space depending on the size of the array</li>
+  <li>The space complexity is O(1), because we don't need to allocate extra space that depends on the size of the array</li>
 </ul>
 
 <b><h4>Binary search based approach</h4></b>
 A consistently better solution can be obtained taking into account that we are managing a pre-ordered array, but rotated.
-In this case we could imagine it as a circular data structure, where just changing the initial position from 0 to that of the minimum element and the final position from (n-1) to that of the maximum element we can apply the binary search algorithm.<br>
+In this case we could imagine it as a circular data structure, where just changing the initial position from 0 to that of the minimum element and the final position from (n-1) to that of the maximum element we can apply the binary search algorithm.
 
 The main difference between the standard algorithm and our case is that for us having <i>low</i> > <i>high</i> is a perfectly suitable case.<br>
 Infact, we can spot two cases:
@@ -99,5 +99,5 @@ def logarithmic_search(array, low, high, target):
 For this algorithm:
 <ul>
   <li>The time complexity is O(log(n)), where n is the size of the array</li>
-  <li>The space complexity is O(1), because we don't need to allocate extra space depending on the size of the array</li>
+  <li>The space complexity is O(1), because we don't need to allocate extra space that depends on the size of the array</li>
 </ul>
