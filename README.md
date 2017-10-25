@@ -13,7 +13,7 @@ Also, this is a good opportunity for me too to keep training, so not why, but <b
 
 # Challenges
 <ul>
-  <a href="">Search in sorted rotated array</a>
+  <a href="https://github.com/DaveRoox/Interview-coding-challenges/blob/master/README.md#search-in-sorted-rotated-array">Search in sorted rotated array</a>
 </ul>
 
 <b>---------------------------------------------------------------------------</b>
