@@ -10,3 +10,15 @@ Also, this is a good opportunity for me too to keep training, so not why, but <b
 <ul>
   <a href="https://glassdoor.com/">Glassdoor</a>
 </ul>
+
+# Challenges
+<ul>
+  <a href="">Search in sorted rotated array</a>
+</ul>
+
+<b>---------------------------------------------------------------------------</b>
+
+# Search in sorted rotated array
+Find a target number in sorted array with rotation.
+Example: the array is [5, 7, 8, 1, 3]
+Find the index of the number 7, the output is 1.
