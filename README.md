@@ -61,15 +61,17 @@ Infact, we can spot two cases:
     </li>
   <li><b>high > low</b>: in this case the main idea is to "transform" this case into the previous one. This can be done adding the length of the array, <i>n</i>, to <i>high</i> and getting the result modulo <i>n</i><br><br>
     Let's suppose to have the following array:<br>
-    <img align='center' src='https://user-images.githubusercontent.com/23279650/32007673-788856ce-b9aa-11e7-9614-916dc30875a4.png'/><br>
+    <img align='middle' src='https://user-images.githubusercontent.com/23279650/32007673-788856ce-b9aa-11e7-9614-916dc30875a4.png'/><br>
     Adding <i>n</i> to <i>high</i> would mean thinking about the array as it has an "extension" and evaluating the middle index would be:<br>
-    <img align='center' src='https://user-images.githubusercontent.com/23279650/32007674-78a77b76-b9aa-11e7-8dcb-e242ebd002db.png'/><br>
+    <img align='middle' src='https://user-images.githubusercontent.com/23279650/32007674-78a77b76-b9aa-11e7-8dcb-e242ebd002db.png'/><br>
     At this point what's left to do is to get the index of the middle back in the original interval [0, n-1], that's easily done by applying the modulo operator:<br>
-    <img align='center' src='https://user-images.githubusercontent.com/23279650/32007675-78c5a420-b9aa-11e7-871e-8790a1e9d442.png'/><br>
+    <img align='middle' src='https://user-images.githubusercontent.com/23279650/32007675-78c5a420-b9aa-11e7-871e-8790a1e9d442.png'/><br>
+    So:<br>
     <b>middle = floor((low + high + n) / 2) % n</b>
   </li>
 </ul>
 
+The code is:<br>
 ```python
 def logarithmic_search(array, low, high, target):
 
@@ -90,7 +92,7 @@ def logarithmic_search(array, low, high, target):
 
     return array[mid] == target, mid if array[mid] == target else None, iterations
 ```
-So:
+For this algorithm:
 <ul>
   <li>The time complexity is O(log(n)), where n is the size of the array</li>
   <li>The space complexity is O(1), because we don't need to allocate extra space depending on the size of the array</li>
