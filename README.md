@@ -48,3 +48,41 @@ So:
   <li>The time complexity is O(n), where n is the size of the array</li>
   <li>The space complexity is O(1), because we don't need to allocate extra space depending on the size of the array</li>
 </ul>
+
+<b><h4>Binary search based approach</h4></b>
+A consistently better solution can be obtained taking into account that we are managing a pre-ordered array, but rotated.
+In this case we could imagine it as a circular data structure, where just changing the initial position from 0 to that of the minimum element and the final position from (n-1) to that of the maximum element we can apply the binary search algorithm.
+
+```python
+def logarithmic_search(array, low, high, target):
+
+    if target < array[low] or target > array[high]:
+        return False, None, 1
+
+    n = len(array)
+    mid = ((low + high + n) // 2) % n if high < low else (low + high) // 2
+    iterations = 1
+
+    while array[mid] != target and low != high:
+        if array[mid] < target:
+            low = (mid + 1) % n
+        else:
+            high = (mid - 1 + n) % n
+        mid = ((low + high + n) // 2) % n if high < low else (low + high) // 2
+        iterations += 1
+
+    return array[mid] == target, mid if array[mid] == target else None, iterations
+```
+The main difference between the standard algorithm and our case is that for us having <i>low</i> > <i>high</i> is a perfectly suitable case.<br>
+Infact, we could have:<br>
+// DISEGNI
+We can spot two cases:
+<ul>
+  <li><b>low < high</b> this is what we have in the standard algorithm. In this case we can get the middle element just evaluating the integer part of <b>(low + high) / 2</b></li>
+  <li>high > low</li>
+</ul>
+For this approach, we have:
+<ul>
+  <li>The time complexity is O(log(n)), where n is the size of the array</li>
+  <li>The space complexity is O(1), because we don't need to allocate extra space depending on the size of the array</li>
+</ul>
