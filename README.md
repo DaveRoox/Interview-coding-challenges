@@ -75,13 +75,15 @@ def logarithmic_search(array, low, high, target):
 ```
 The main difference between the standard algorithm and our case is that for us having <i>low</i> > <i>high</i> is a perfectly suitable case.<br>
 Infact, we could have:<br>
-// DISEGNI
+// DISEGNI<br>
 We can spot two cases:
 <ul>
-  <li><b>low < high</b> this is what we have in the standard algorithm. In this case we can get the middle element just evaluating the integer part of <b>(low + high) / 2</b></li>
-  <li>high > low</li>
+  <li><b>low < high</b>: this is what we have in the standard algorithm. In this case we can get the middle element just evaluating the integer part of <b>(low + high) / 2</b></li>
+  <li><b>high > low</b>: in this case the main idea is to "transform" this case into the previous one. This can be done adding the length of the array, <i>n</i>, to <i>high</i> and getting the result modulo <i>n</i><br>
+    <b>middle = floor((low + high + n) / 2) % n</b>
+  </li>
 </ul>
-For this approach, we have:
+So:
 <ul>
   <li>The time complexity is O(log(n)), where n is the size of the array</li>
   <li>The space complexity is O(1), because we don't need to allocate extra space depending on the size of the array</li>
