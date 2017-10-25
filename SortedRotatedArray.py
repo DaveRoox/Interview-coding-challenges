@@ -56,14 +56,14 @@ print()
 
 # Searching for a target number
 target = 20 # present
-found, index, iterations = rotated_binary_search(array, a=offset, b=offset - 1, target=target)
+found, index, iterations = logarithmic_search(array, a=offset, b=offset - 1, target=target)
 if found:
     print('%d found at index %d [%d iterations]' % (target, index, iterations))
 else:
     print('%d not found [%d iterations]' % (target, iterations))
 	
 target = 19 # not present
-found, index, iterations = rotated_binary_search(array, a=offset, b=offset - 1, target=target)
+found, index, iterations = logarithmic_search(array, a=offset, b=offset - 1, target=target)
 if found:
     print('%d found at index %d [%d iterations]' % (target, index, iterations))
 else:
