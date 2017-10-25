@@ -29,8 +29,6 @@ If the element is matched, the function returns the current index
 
 ```python
 def linear_search(array, a, b, target):
-    if target < array[a] or target > array[b]:
-        return False, None, 1
 
     n = len(array)
     iterations = 1
