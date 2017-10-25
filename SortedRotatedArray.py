@@ -10,9 +10,9 @@ def linear_search(array, a, b, target):
     iterations = 1
 	
     for i in range(n):
-		if array[i] == target:
-			return True, i, iterations
-		iterations += 1
+        if array[i] == target:
+            return True, i, iterations
+        iterations += 1
 
     return False, None, iterations
 
