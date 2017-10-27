@@ -22,24 +22,6 @@ struct BigInt {
 
 	friend ostream& operator<<(ostream&, const BigInt&);
 
-private:
-
-	BigIntNode *root;
-
-	void recursive_print(const BigIntNode *node) const {
-
-		if(node == nullptr)
-			return;
-
-		recursive_print(node->next);
-		cout << node->digit;
-
-	}
-
-	void print() const {
-		recursive_print(this->root);
-	}
-
 public:
 
 	BigInt() {
@@ -130,6 +112,24 @@ public:
 	BigInt& operator%=(const BigInt &bi); // To be done.
 	// And so on...
 
+private:
+
+	BigIntNode *root;
+
+	void recursive_print(const BigIntNode *node) const {
+
+		if(node == nullptr)
+			return;
+
+		recursive_print(node->next);
+		cout << node->digit;
+
+	}
+
+	void print() const {
+		recursive_print(this->root);
+	}
+	
 };
 
 /* ------------------------------------------------------------------------------- */
