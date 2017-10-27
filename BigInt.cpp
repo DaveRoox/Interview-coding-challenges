@@ -71,14 +71,14 @@ public:
 		}
 
 		if(p != nullptr)
-			while(p != nullptr) {
+			do {
 				tmpResult = p->digit + carry;
 				carry = tmpResult / 10;
 				tmpResult %= 10;
 				resultPtr->next = new BigIntNode(tmpResult);
 				resultPtr = resultPtr->next;
 				p = p->next;
-			}
+			} while(p != nullptr);
 		else
 			while(t != nullptr) {
 				tmpResult = t->digit + carry;
