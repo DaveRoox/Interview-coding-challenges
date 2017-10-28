@@ -14,6 +14,7 @@ Also, this is a good opportunity for me too to keep training, so not why, but <b
 # Challenges
 <ul>
   <li><a href="https://github.com/DaveRoox/Interview-coding-challenges/blob/master/README.md#search-in-sorted-rotated-array">Search in sorted rotated array</a></li>
+  <li><a href="https://github.com/DaveRoox/Interview-coding-challenges/blob/master/README.md#big-integers">Big integers</a></li>
 </ul>
 
 <b>---------------------------------------------------------------------------</b>
@@ -93,6 +94,39 @@ def logarithmic_search(array, low, high, target):
         iterations += 1
 
     return array[mid] == target, mid if array[mid] == target else None, iterations
+```
+
+For this algorithm:
+<ul>
+  <li>The time complexity is O(log(n)), where n is the size of the array</li>
+  <li>The space complexity is O(1), because we don't need to allocate extra space that depends on the size of the array</li>
+</ul>
+
+<b>---------------------------------------------------------------------------</b>
+
+<b><h2>Big integers</h2></b>
+Multiply two big integers which don't fit into an built-in integer type.<br>
+How would you represent big numbers as a data structure?<br>
+Write the function to multiply two big integers.
+
+<b><h4>Representation</h4></b>
+The representation that I am going to propose is based on a linked list.<br>
+Every digit of the number to represent is contained in a node, linked to another node containing the <i>next</i> digit of the number.<br>
+For instance, let's suppose that our number N is 681, this representation would end up in the following data structure:<br>
+<img src='https://user-images.githubusercontent.com/23279650/32132943-c2685ef4-bbcd-11e7-88e6-cf474d04ee48.png'/>
+
+```python
+def linear_search(array, low, high, target):
+
+    n = len(array)
+    iterations = 1
+
+    for i in range(n):
+        if array[i] == target:
+            return True, i, iterations
+        iterations += 1
+
+    return False, None, iterations
 ```
 
 For this algorithm:
