@@ -116,22 +116,24 @@ Let's suppose that our number N is 681, this representation would end up in the 
 <img src='https://user-images.githubusercontent.com/23279650/32132943-c2685ef4-bbcd-11e7-88e6-cf474d04ee48.png' />
 
 The choice of a linked list is optimal for its flexibility, since operations of adding and/or removing nodes are performed easily and with low overhead.
-These operations are necessary when mutating operators (+=, -=, /=, *=, %=, etc.) are requested to be implemented efficiently. In fact, modifying in-place, removing or adding new nodes is generally better than creating a new list, executing the operations needed according to the operator we are implementing, discarding the original list and assigning the new list, because in this last case we discard the previous list, no matter what we are doing, if a division by 10 or just adding 1.<br><br>
+These operations are necessary when mutating operators (+=, -=, /=, *=, %=, etc.) are requested to be implemented efficiently. In fact, modifying in-place, removing or adding new nodes is generally better than creating a new list, executing the operations needed according to the operator we are implementing, discarding the original list and assigning the new one, because in this last case we discard the whole previous list, no matter what we are doing, if a division by 10 or just adding 1.<br><br>
 
 The main downside of using a linked list is the memory usage.
 
-```python
-def linear_search(array, low, high, target):
+```c++
+struct BigIntNode {
 
-    n = len(array)
-    iterations = 1
+	short digit;
+	BigIntNode *next;
 
-    for i in range(n):
-        if array[i] == target:
-            return True, i, iterations
-        iterations += 1
+	BigIntNode(short _digit, BigIntNode *_next = nullptr): digit(_digit), next(_next) {}
 
-    return False, None, iterations
+	~BigIntNode() {
+		if(next)
+			delete next;
+	}
+
+};
 ```
 
 For this algorithm:
