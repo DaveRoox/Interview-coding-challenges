@@ -110,7 +110,16 @@ How would you represent big numbers as a data structure?<br>
 Write the function to multiply two big integers.
 
 <b><h4>Representation</h4></b>
-The first representation that I am going to propose is based on a linked list.<br>
+Hypothesis: having a string <i>s</i> representing the number.<br><br>
+
+
+The first representation that I am going to propose is based on an array allocated dynamically.<br>
+This approach is both quick and easy to implement, has a good memory usage and could result in a good choice in terms of performance.<br>
+However, two constraints to take into account when adopting this solution are the contiguity of the elements and the fixed size of the memory allocated.<br>
+The contiguity of the elements <i>could</i> be a problem when we need to manage <b>very</b> large numbers.
+Instead, the fixed size is a problem when we need to add or remove dynamically one or more elements, that is a situation that we could possibily face in the implementation of mutating operators on integers. This can be solved freeing the currenct portion of memory in order to allocate a new one of the right size.<br><br>
+
+The second representation is based on a linked list.<br>
 Every digit of the original number is contained in a node that is linked to another one containing the <i>next</i> digit of the number, and so on.<br>
 Let's suppose that our number N is 681, this representation would end up in the following data structure:<br><br>
 <img src='https://user-images.githubusercontent.com/23279650/32132943-c2685ef4-bbcd-11e7-88e6-cf474d04ee48.png' />
@@ -118,7 +127,7 @@ Let's suppose that our number N is 681, this representation would end up in the 
 The choice of a linked list is optimal for its flexibility, since operations of adding and/or removing nodes are performed easily and with low overhead.
 These operations are necessary when mutating operators (+=, -=, /=, *=, %=, etc.) are requested to be implemented efficiently. In fact, modifying in-place, removing or adding new nodes is generally better than creating a new list, executing the operations needed according to the operator we are implementing, discarding the original list and assigning the new one, because in this last case we discard the whole previous list, no matter what we are doing, if a division by 10 or just adding 1.<br><br>
 
-The main downside of using a linked list is the memory usage.
+Anyway, the main downside of using a linked list is the memory usage, because they need also to store the pointers of each node.
 
 ```c++
 struct BigIntNode {
