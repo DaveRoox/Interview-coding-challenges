@@ -110,14 +110,15 @@ How would you represent big numbers as a data structure?<br>
 Write the function to multiply two big integers.
 
 <b><h4>Representation</h4></b>
-Hypothesis: having a string <i>s</i> representing the number.<br><br>
-
+<b>Hypothesis</b>: having a string <i>s</i> representing the number.<br>
 
 The first representation that I am going to propose is based on an array allocated dynamically.<br>
 This approach is both quick and easy to implement, has a good memory usage and could result in a good choice in terms of performance.<br>
-However, two constraints to take into account when adopting this solution are the contiguity of the elements and the fixed size of the memory allocated.<br>
-The contiguity of the elements <i>could</i> be a problem when we need to manage <b>very</b> large numbers.
-Instead, the fixed size is a problem when we need to add or remove dynamically one or more elements, that is a situation that we could possibily face in the implementation of mutating operators on integers. This can be solved freeing the currenct portion of memory in order to allocate a new one of the right size.<br><br>
+However, two constraints to take into account when adopting this solution are the contiguity of the elements and the fixed size of the memory allocated:<br>
+<ul>
+<li>The contiguity of the elements could be a problem when we need to manage <b>very</b> large numbers.</li>
+<li>The fixed size is a problem when we need to add or remove dynamically one or more elements, that is a situation that we could possibily face in the implementation of mutating operators. This can be solved first freeing the current memory and then allocating a new one of the right size.</li>
+</ul><br><br>
 
 The second representation is based on a linked list.<br>
 Every digit of the original number is contained in a node that is linked to another one containing the <i>next</i> digit of the number, and so on.<br>
