@@ -118,7 +118,7 @@ However, two constraints to take into account when adopting this solution are th
 <ul>
 <li>The contiguity of the elements could be a problem when we need to manage <b>very</b> large numbers.</li>
 <li>The fixed size is a problem when we need to add or remove dynamically one or more elements, that is a situation that we could possibily face in the implementation of mutating operators. This can be solved first freeing the current memory and then allocating a new one of the right size.</li>
-</ul><br><br>
+</ul><br>
 
 The second representation is based on a linked list.<br>
 Every digit of the original number is contained in a node that is linked to another one containing the <i>next</i> digit of the number, and so on.<br>
@@ -126,10 +126,10 @@ Let's suppose that our number N is 681, this representation would end up in the 
 <img src='https://user-images.githubusercontent.com/23279650/32132943-c2685ef4-bbcd-11e7-88e6-cf474d04ee48.png' />
 
 The choice of a linked list is optimal for its flexibility, since operations of adding and/or removing nodes are performed easily and with low overhead.
-These operations are necessary when mutating operators (+=, -=, /=, *=, %=, etc.) are requested to be implemented efficiently. In fact, modifying in-place, removing or adding new nodes is generally better than creating a new list, executing the operations needed according to the operator we are implementing, discarding the original list and assigning the new one, because in this last case we discard the whole previous list, no matter what we are doing, if a division by 10 or just adding 1.<br><br>
+These operations are necessary when mutating operators (+=, -=, /=, *=, %=, etc.) are requested to be implemented efficiently. In fact, modifying in-place, removing or adding new nodes is generally better than creating a new list, executing the operations needed according to the operator we are implementing, discarding the original list and assigning the new one, because in this last case we discard the whole previous list, no matter what we are doing, if a division by 10 or just adding 1.<br>
 
-Anyway, the main downside of using a linked list is the memory usage, because they need also to store the pointers of each node.
-
+The downside of using a linked list, however, is the memory usage, because they need also to store the pointers of each node.<br>
+The definition of a node in C++:<br>
 ```c++
 struct BigIntNode {
 
